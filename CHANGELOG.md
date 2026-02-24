@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.6] - 2026-02-08
+
+### Changed
+
+- **Optional Project Links**:
+  - Updated `projects` schema to make the `link` field optional.
+  - Projects marked as `directLink: true` but missing a URL now gracefully fallback to the internal detail page.
+  - Prevents 404 errors by generating internal pages for all projects, even those intended for direct linking if the link is missing.
+
+### Added
+
+- **Type Safety**:
+  - Integrated `astro check` into the `pnpm check` script to validate `.astro` files alongside Svelte components.
+
 ## [1.2.5] - 2026-02-06
 
 ### Added
