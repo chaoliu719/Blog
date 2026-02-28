@@ -51,18 +51,16 @@ export interface SiteConfig {
 }
 
 export const SITE: SiteConfig = {
-  author: 'Astronaut',
-  desc: 'Developer and designer building premium web experiences.',
-  title: 'Spaceship',
+  author: 'Maos',
+  title: 'Maos 的 AI 实验室',
+  desc: '正在探索 AI 如何改造组织与业务，记录实践与思考',
   ogImage: 'og.png',
-  lang: 'en-US',
+  lang: 'zh-CN',
   base: '/',
-  website: 'https://spaceship-one.vercel.app',
+  website: 'https://maos.liuchao.life',
   social: {
-    x: 'https://x.com/astronaut',
-    github: 'https://github.com/astronaut',
-    telegram: 'https://t.me/astronaut',
-    facebook: 'https://facebook.com/astronaut',
+    x: 'https://x.com/chaoliu719',
+    github: 'https://github.com/chaoliu719',
   },
   googleAnalyticsId: '', // Example: 'G-XXXXXXXXXX'
   homeHeroDescription:
@@ -71,18 +69,18 @@ export const SITE: SiteConfig = {
   projectsDescription: 'Things I’ve built that I’m proud of. Many of them are open-source.',
 
   // Homepage post counts
-  featuredPostsCount: 3,
-  latestPostsCount: 3,
+  featuredPostsCount: 0,
+  latestPostsCount: 15,
 
   // Homepage projects
   homeProjects: {
-    enabled: true,
+    enabled: false,
     count: 4,
   },
 
   // CTA (Call-to-Action) block for blog posts
   cta: {
-    enabled: true,
+    enabled: false,
     filePath: 'site/cta.md',
   },
 

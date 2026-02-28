@@ -1,6 +1,7 @@
-# I'm {author}, developer and designer.
+# 我是 {author}，正在用 AI 重新定义工作方式。
 
-Building premium web experiences with Astro, Svelte, and Tailwind.
-Focused on performance, aesthetics, and clean code.
+探索 AI 如何改变组织的工作方式。
 
-I am currently working on open-source tools and sharing my journey through writing.
+专注于把零散的 AI 实践升级成可复用的系统。
+
+目前在探索 AI 咨询的可能性，边做边写，记录真实的过程。
