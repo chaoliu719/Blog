@@ -22,6 +22,12 @@ export interface SiteConfig {
     count: number;
   };
 
+  // Homepage appearances
+  homeAppearances: {
+    enabled: boolean;
+    count: number;
+  };
+
   // CTA (Call-to-Action) block for blog posts
   cta: {
     enabled: boolean;
@@ -76,6 +82,12 @@ export const SITE: SiteConfig = {
   homeProjects: {
     enabled: false,
     count: 4,
+  },
+
+  // Homepage appearances
+  homeAppearances: {
+    enabled: false,
+    count: 3,
   },
 
   // CTA (Call-to-Action) block for blog posts
