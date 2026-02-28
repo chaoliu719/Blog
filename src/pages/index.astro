@@ -8,6 +8,7 @@ import { SITE } from '@/config';
 import { Image } from 'astro:assets';
 import profilePhoto from '@/site-assets/profile_photo.png';
 import { getLangFlag } from '@/lib/utils/lang';
+import SocialLinks from '@/components/SocialLinks.astro';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { parseMarkdown } from '@/lib/simple-markdown';
@@ -47,17 +48,7 @@ const appearances = (await getCollection('appearances'))
         })()}
       />
       <div class="flex flex-wrap justify-center md:justify-start gap-4 sm:gap-6">
-        {
-          Object.entries(SITE.social).map(([platform, link]) => (
-            <a
-              href={link}
-              aria-label={`Visit our ${platform} profile`}
-              class="text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-all no-underline"
-            >
-              {platform}
-            </a>
-          ))
-        }
+        <SocialLinks />
       </div>
     </div>
     <div

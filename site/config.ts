@@ -73,6 +73,7 @@ export const SITE: SiteConfig = {
   social: {
     x: 'https://x.com/chaoliu719',
     github: 'https://github.com/chaoliu719',
+    xiaohongshu: 'https://www.xiaohongshu.com/user/profile/5df5f22400000000010046ab',
   },
   googleAnalyticsId: '', // Example: 'G-XXXXXXXXXX'
   homeHeroDescription:
