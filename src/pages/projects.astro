@@ -5,6 +5,8 @@ import Breadcrumbs from '@/components/Breadcrumbs.svelte';
 import { SITE } from '@/config';
 import { getBreadcrumbSchema } from '@/lib/schemas';
 
+if (!SITE.pages.projects.enabled) return Astro.rewrite('/404');
+
 const schema = getBreadcrumbSchema([
   { name: 'Projects', url: new URL('/projects', Astro.site).toString() },
 ]);

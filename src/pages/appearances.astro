@@ -3,8 +3,10 @@ import Layout from '@/layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import { formatDate } from '@/lib/utils/date';
 import Breadcrumbs from '@/components/Breadcrumbs.svelte';
-
+import { SITE } from '@/config';
 import { getLangFlag } from '@/lib/utils/lang';
+
+if (!SITE.pages.appearances.enabled) return Astro.rewrite('/404');
 
 const appearances = await getCollection('appearances');
 

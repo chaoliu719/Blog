@@ -4,6 +4,9 @@ import { render, getCollection, type CollectionEntry } from 'astro:content';
 import Breadcrumbs from '@/components/Breadcrumbs.svelte';
 import SocialShare from '@/components/SocialShare.svelte';
 import { getBreadcrumbSchema } from '@/lib/schemas';
+import { SITE } from '@/config';
+
+if (!SITE.pages.projects.enabled) return Astro.rewrite('/404');
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');

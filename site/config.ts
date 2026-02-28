@@ -28,6 +28,12 @@ export interface SiteConfig {
     count: number;
   };
 
+  // Page visibility
+  pages: {
+    projects: { enabled: boolean };
+    appearances: { enabled: boolean };
+  };
+
   // CTA (Call-to-Action) block for blog posts
   cta: {
     enabled: boolean;
@@ -88,6 +94,12 @@ export const SITE: SiteConfig = {
   homeAppearances: {
     enabled: false,
     count: 3,
+  },
+
+  // Page visibility
+  pages: {
+    projects: { enabled: false },
+    appearances: { enabled: false },
   },
 
   // CTA (Call-to-Action) block for blog posts
