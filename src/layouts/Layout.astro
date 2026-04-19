@@ -7,6 +7,8 @@ import SearchModal from '@/components/SearchModal.svelte';
 import { ClientRouter } from 'astro:transitions';
 import JsonLd from '@/components/JsonLd.astro';
 import { getWebSiteSchema, getOrganizationSchema, getPersonSchema } from '@/lib/schemas';
+import { Analytics } from '@vercel/analytics/astro';
+import { SpeedInsights } from '@vercel/speed-insights/astro';
 
 // Preload fonts to break critical request chains
 import outfitFont400 from '@fontsource/outfit/files/outfit-latin-400-normal.woff2?url';
@@ -167,5 +169,7 @@ const gaScript = `
       <Footer />
       <SearchModal client:idle />
     </div>
+    <Analytics />
+    <SpeedInsights />
   </body>
 </html>
