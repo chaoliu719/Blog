@@ -69,7 +69,7 @@ export const SITE: SiteConfig = {
   ogImage: 'og.png',
   lang: 'zh-CN',
   base: '/',
-  website: 'https://maos.liuchao.life',
+  website: 'https://liuchao.life',
   social: {
     x: 'https://x.com/chaoliu719',
     github: 'https://github.com/chaoliu719',
