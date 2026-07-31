@@ -80,7 +80,7 @@ const appearances = (await getPublishedAppearances())
       featuredPosts.length > 0 && (
         <section>
           <div class="flex items-baseline justify-between mb-6 sm:mb-8">
-            <h2 class="text-xl sm:text-2xl font-black tracking-tight text-foreground shrink-0">
+            <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-foreground shrink-0 border-l-4 border-primary pl-3 sm:pl-4">
               精选
             </h2>
             <div class="h-px flex-1 mx-4 sm:mx-6 bg-border opacity-60 relative -top-1" />
@@ -103,7 +103,9 @@ const appearances = (await getPublishedAppearances())
     <!-- 3. Latest Posts -->
     <section>
       <div class="flex items-baseline justify-between mb-6 sm:mb-8">
-        <h2 class="text-xl sm:text-2xl font-black tracking-tight text-foreground shrink-0">
+        <h2
+          class="text-2xl sm:text-3xl font-black tracking-tight text-foreground shrink-0 border-l-4 border-primary pl-3 sm:pl-4"
+        >
           最新文章
         </h2>
         <div class="h-px flex-1 mx-4 sm:mx-6 bg-border opacity-60 relative -top-1"></div>
@@ -127,7 +129,7 @@ const appearances = (await getPublishedAppearances())
       SITE.homeProjects.enabled && projects.length > 0 && (
         <section>
           <div class="flex items-baseline justify-between mb-6 sm:mb-8">
-            <h2 class="text-xl sm:text-2xl font-black tracking-tight text-foreground shrink-0">
+            <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-foreground shrink-0 border-l-4 border-primary pl-3 sm:pl-4">
               项目
             </h2>
             <div class="h-px flex-1 mx-4 sm:mx-6 bg-border opacity-60 relative -top-1" />
@@ -262,7 +264,7 @@ const appearances = (await getPublishedAppearances())
       SITE.homeAppearances.enabled && appearances.length > 0 && (
         <section>
           <div class="flex items-baseline justify-between mb-6 sm:mb-8">
-            <h2 class="text-xl sm:text-2xl font-black tracking-tight text-foreground shrink-0">
+            <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-foreground shrink-0 border-l-4 border-primary pl-3 sm:pl-4">
               其他平台
             </h2>
             <div class="h-px flex-1 mx-4 sm:mx-6 bg-border opacity-60 relative -top-1" />
