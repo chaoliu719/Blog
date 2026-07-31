@@ -11,6 +11,9 @@ importers:
 
   .:
     dependencies:
+      '@astrojs/markdown-remark':
+        specifier: ^7.2.2
+        version: 7.2.2
       '@astrojs/partytown':
         specifier: ^2.1.7
         version: 2.1.7
