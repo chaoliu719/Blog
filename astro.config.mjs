@@ -11,6 +11,7 @@ import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
 import remarkEmoji from 'remark-emoji';
+import { unified } from '@astrojs/markdown-remark';
 import {
   transformerNotationDiff,
   transformerNotationHighlight,
@@ -53,31 +54,33 @@ export default defineConfig({
         transformerNotationDiff(),
       ],
     },
-    remarkPlugins: [remarkEmoji],
-    rehypePlugins: [
-      rehypeSlug,
-      [
-        rehypeAutolinkHeadings,
-        {
-          behavior: 'prepend',
-          properties: {
-            className: ['heading-link'],
-            ariaLabel: 'Link to section',
+    processor: unified({
+      remarkPlugins: [remarkEmoji],
+      rehypePlugins: [
+        rehypeSlug,
+        [
+          rehypeAutolinkHeadings,
+          {
+            behavior: 'prepend',
+            properties: {
+              className: ['heading-link'],
+              ariaLabel: 'Link to section',
+            },
+            content: {
+              type: 'text',
+              value: '#',
+            },
           },
-          content: {
-            type: 'text',
-            value: '#',
+        ],
+        [
+          rehypeExternalLinks,
+          {
+            target: '_blank',
+            rel: ['noopener', 'noreferrer'],
           },
-        },
+        ],
       ],
-      [
-        rehypeExternalLinks,
-        {
-          target: '_blank',
-          rel: ['noopener', 'noreferrer'],
-        },
-      ],
-    ],
+    }),
   },
 
   image: {
