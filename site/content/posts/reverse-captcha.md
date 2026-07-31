@@ -1,7 +1,7 @@
 ---
 title: '逆向验证码：互联网正在悄悄把人类锁在门外'
 description: 'Browser-use 提出了一种"阻挡真人、放行 AI"的验证码。顺着它的经济逻辑推下去，会得到一个不太舒服的结论：在某些地方，人的流量价值已经低于机器了。'
-pubDate: 2026-07-31
+pubDate: 2026-05-28
 tags: [AI, Agent, 互联网观察]
 draft: false
 lang: 'zh'
