@@ -155,7 +155,7 @@
         class="w-8 h-8 border-2 border-primary/30 border-t-primary rounded-full animate-spin"
       ></div>
       <div class="text-xs text-muted-foreground font-medium uppercase tracking-wider">
-        Generating Diagram
+        正在生成图表
       </div>
     </div>
   </div>

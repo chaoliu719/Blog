@@ -125,7 +125,7 @@
               d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
             />
           </svg>
-          Light
+          浅色
         </button>
         <button
           onclick={() => setTheme('dark')}
@@ -148,7 +148,7 @@
           >
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </svg>
-          Dark
+          深色
         </button>
         <button
           onclick={() => setTheme('system')}
@@ -173,7 +173,7 @@
             <line x1="8" x2="16" y1="21" y2="21" />
             <line x1="12" x2="12" y1="17" y2="21" />
           </svg>
-          System
+          跟随系统
         </button>
       </div>
     </div>

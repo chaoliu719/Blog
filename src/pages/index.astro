@@ -51,7 +51,7 @@ const appearances = (await getPublishedAppearances())
             const markdown = readFileSync(fullPath, 'utf-8');
             return parseMarkdown(markdown.replace('{author}', SITE.author));
           } catch {
-            return `<h1>I'm ${SITE.author}, developer and designer.</h1><p>${SITE.homeHeroDescription}</p>`;
+            return `<h1>我是 ${SITE.author}</h1><p>${SITE.homeHeroDescription}</p>`;
           }
         })()}
       />
@@ -86,7 +86,7 @@ const appearances = (await getPublishedAppearances())
               href="/posts"
               class="px-2 py-0.5 rounded-md text-xs font-bold tracking-wide hover:bg-accent hover:text-primary transition-all no-underline"
             >
-              See all posts
+              查看全部文章
             </a>
           </div>
           <div class="grid gap-3 sm:gap-4">

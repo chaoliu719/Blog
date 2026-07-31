@@ -80,14 +80,14 @@
         bind:this={searchInput}
         bind:value={query}
         type="text"
-        placeholder="Search post titles or descriptions..."
+        placeholder="搜索文章标题或摘要…"
         class="flex-1 bg-transparent border-none outline-none text-base sm:text-lg text-foreground placeholder:text-muted-foreground/40 font-medium"
       />
       <button
         onclick={() => uiState.closeSearch()}
         class="sm:hidden text-xs font-bold uppercase tracking-widest text-muted-foreground"
       >
-        Cancel
+        取消
       </button>
     </div>
 
