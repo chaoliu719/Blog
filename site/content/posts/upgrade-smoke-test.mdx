@@ -1,0 +1,110 @@
+---
+title: '渲染冒烟测试'
+description: '长期保留的回归夹具：一页覆盖代码高亮、shiki transformer、mermaid、emoji、外链和标题锚点。升级依赖后用它做视觉验证。'
+pubDate: 2026-07-31
+tags: [测试]
+draft: true
+lang: 'zh'
+---
+
+import Mermaid from '@/components/Mermaid.svelte';
+
+> **这不是文章，是回归测试夹具。**
+> `draft: true` 保证它只在 `pnpm dev` 里可见，永远不会出现在生产站点。
+>
+> 用法：升级依赖后 `pnpm dev`，打开本页，逐项对照下面每个小节的预期结果。
+> 其中代码高亮、emoji、外链、锚点也可以在构建产物里 grep 验证；
+> **mermaid 是客户端渲染的，只能靠肉眼看这一页。**
+
+## 代码高亮与 shiki transformer
+
+预期：四个代码块都有语法着色，且亮/暗主题切换时配色跟着变（`min-light` / `catppuccin-frappe` 双主题）。
+
+普通高亮：
+
+```ts
+const site = 'liuchao.life';
+export function greet(name: string): string {
+  return `hello ${name}`;
+}
+```
+
+行高亮（`transformerNotationHighlight`）：
+
+```js
+const a = 1;
+const b = 2; // [!code highlight]
+const c = 3;
+```
+
+预期：只有 `const b = 2;` 那一行有高亮背景。
+
+单词高亮（`transformerNotationWordHighlight`）：
+
+```js
+// [!code word:astro]
+const framework = 'astro';
+const version = 'astro 7';
+```
+
+预期：两行里的 `astro` 这个词被单独标记（共 2 处）。
+
+diff 标注（`transformerNotationDiff`）：
+
+```js
+const oldValue = 5; // [!code --]
+const newValue = 7; // [!code ++]
+```
+
+预期：一行红底带 `-`，一行绿底带 `+`。
+
+## Mermaid 图
+
+预期：下面渲染出一张流程图。**这一项只能肉眼验证** —— 组件是 `onMount` 客户端渲染，
+构建产物里只有一个未执行的 JS chunk，grep 不出图。若这里显示空白或报错，
+多半是 mermaid 版本或 Svelte 集成出了问题。
+
+<Mermaid
+  client:load
+  chart={`graph TD
+    A[Markdown] --> B{有插件?}
+    B -->|是| C[remark/rehype]
+    B -->|否| D[Sätteri]
+    C --> E[HTML]
+    D --> E`}
+/>
+
+## Emoji 与外链
+
+remark-emoji 测试 :rocket: :tada: :white_check_mark:
+
+外链测试：[Astro 官网](https://astro.build) 应该带 `target="_blank"` 和 `rel="noopener"`。
+
+站内链接：[关于](/about) 不应该被加外链属性。
+
+## 中文标题锚点测试
+
+预期：上面每个标题左侧都有一个 `#` 锚点（`rehype-autolink-headings`），
+且 id 是中文 slug（`rehype-slug`），例如本节 id 应为 `中文标题锚点测试`。
+
+---
+
+## 构建产物验证（可选）
+
+除 mermaid 外，其余各项都能在生成的 HTML 里直接查。把本文 frontmatter 的
+`draft` 临时改成 `false`，`pnpm build`，然后：
+
+注意：下面的 pattern 都故意写成 `[-]`、`[_]` 这种形式，这样本节自身的字面量
+不会被 grep 命中，计数才准。
+
+```bash
+f=dist/posts/2026-07-31-upgrade-smoke-test/index.html
+grep -c 'class="line highlighte[d]"' "$f"          # 行高亮，预期 1
+grep -c 'highlighted[-]word' "$f"                  # 单词高亮，预期 2
+grep -cE 'class="line diff (add|remov[e])"' "$f"   # diff 标注，预期 2
+grep -c 'heading[-]link' "$f"                      # 标题锚点，每个标题 1 个
+grep -oE '<h2 id="[^"]*"' "$f"                     # 中文 slug
+grep -oE '<a href="https://astro[.]build"[^>]*>' "$f"  # 外链应带 rel + target
+```
+
+验证完记得把 `draft` 改回 `true`。
