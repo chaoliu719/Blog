@@ -7,6 +7,8 @@ draft: false
 lang: 'zh'
 ---
 
+> 这个话题我也在播客里聊过：[逆向验证码：互联网正在悄悄「赶走」人类，只欢迎 AI？](https://www.xiaoyuzhoufm.com/episode/6a1949727460cabdeb57cd6a)（《AI 茶水间》）。
+
 网站的验证码一般用来确认访问者是真人，不是机器人。
 
 现在，开源的浏览器操作库 Browser-use 提出了[逆向验证码](https://browser-use.com/posts/prove-you-are-a-robot)的概念——这种验证码**阻挡真人、放行 AI**，用于那些只供 AI 使用的接口。

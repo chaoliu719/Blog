@@ -93,14 +93,14 @@ export const SITE: SiteConfig = {
 
   // Homepage appearances
   homeAppearances: {
-    enabled: false,
+    enabled: true,
     count: 3,
   },
 
   // Page visibility
   pages: {
     projects: { enabled: true },
-    appearances: { enabled: false },
+    appearances: { enabled: true },
   },
 
   // CTA (Call-to-Action) block for blog posts
