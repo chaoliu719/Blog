@@ -1,9 +1,10 @@
 ---
-title: "I'm Astronaut, a software designer and entrepreneur."
+title: '关于'
 ---
 
-I've been obsessed with computers since I was a kid, though I didn't start coding until I was in my late teens. I'm a self-taught developer who loves the intersection of design and technology.
+这里是 **Maos 的 AI 实验室**。
 
-Currently, I'm building **Spaceship**, a modern blog template that combines the power of Astro 5, Svelte 5, and Tailwind 4. This project is my attempt at creating a perfect balance between performance and developer experience.
+我在探索 AI 如何改造组织与业务，把实践过程和思考记录在这里。
 
-Beyond work, I'm an avid reader, amateur astronomer, and coffee enthusiast. I believe that the best products are built at the intersection of curiosity and craftsmanship.
+可以在 [X](https://x.com/chaoliu719)、[GitHub](https://github.com/chaoliu719) 和
+[小红书](https://www.xiaohongshu.com/user/profile/5df5f22400000000010046ab)找到我。

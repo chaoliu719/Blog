@@ -1,14 +1,10 @@
-# 💼 Hire me if you like this post
+# 聊聊？
 
-I'm available for **freelance projects** and **full-time opportunities**.
+如果这篇对你有用，欢迎交流。
 
-Whether you need:
+在 [X](https://x.com/chaoliu719) 或 [GitHub](https://github.com/chaoliu719) 都可以找到我。
 
-- A modern, performant website
-- Technical consultation
-- Code review and optimization
-- Or just want to chat about web development
-
-Let's build something amazing together!
-
-[Get in touch](mailto:astronaut@example.com)
+<!--
+这块是文章底部的行动号召，目前在 site/config.ts 里是关闭状态（cta.enabled: false）。
+启用前请先把上面的内容换成你真正想说的话。
+-->

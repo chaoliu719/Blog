@@ -118,7 +118,7 @@ export const SITE: SiteConfig = {
   // Get your configuration from https://giscus.app
   comments: {
     enabled: false, // Set to true after filling in the IDs below
-    repo: 'alec-c4/spaceship', // Your GitHub repository
+    repo: 'chaoliu719/Blog', // Your GitHub repository
     repoId: '', // Get from https://giscus.app - enter repo above and copy the value
     category: 'General', // GitHub Discussions category name
     categoryId: '', // Get from https://giscus.app - select category and copy the value
@@ -127,6 +127,6 @@ export const SITE: SiteConfig = {
     emitMetadata: false,
     inputPosition: 'bottom',
     theme: 'preferred_color_scheme', // Automatically matches your site theme
-    lang: 'en',
+    lang: 'zh-CN',
   },
 };

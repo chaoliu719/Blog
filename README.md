@@ -1,206 +1,115 @@
-# Spaceship 🚀
+# Maos 的 AI 实验室
 
-**Spaceship** is a high-performance, premium blog and portfolio template built with **Astro 5**, **Svelte 5 Runes**, and **Tailwind CSS 4**. It is designed for developers and designers who want a modern, ultra-fast, and SEO-optimized web experience.
+个人博客源码，部署在 [liuchao.life](https://liuchao.life)。
 
-## ✨ Features
+技术栈：Astro 7 + Svelte 5 + Tailwind 4，静态构建，Vercel 自动部署。
 
-- **🚀 High Performance**: Built with Astro for lightning-fast speeds and minimal JavaScript.
-- **⚡ Optimizations**:
-  - **Partytown**: Google Analytics is offloaded to web workers.
-  - **Loading Indicator**: Smooth progress bar for better navigation UX.
-- **🎨 Modern Design**: Clean aesthetics with dark mode support and fluid typography.
-- **Svelte 5 Runes**: Leveraging the latest Svelte reactivity system (`$state`, `$derived`, `$props`).
-- **Tailwind CSS 4**: Next-gen CSS framework for high performance and zero-runtime.
-- **📝 Interactive Blog**:
-  - **MDX Support**: Embed Svelte components directly in your posts.
-  - **Series Support**: Group related posts into a series with automatic navigation.
-  - **Draft Mode**: Hide draft posts in production, visible in development.
-  - **Publication Date Filtering**: Schedule posts with future dates.
-  - **Customizable CTA**: Add call-to-action blocks at the end of posts.
-  - **Per-Post Controls**: Toggle CTA and comments individually per post.
-- **💬 Comments System**:
-  - **GitHub Discussions**: Powered by Giscus for privacy-friendly comments.
-  - **Fully Customizable**: Configure theme, language, and behavior.
-  - **Per-Post Toggle**: Enable/disable comments on individual posts.
-- **🔍 Advanced Search**: Fast, client-side search across all post titles and descriptions.
-- **📊 Robust SEO**:
-  - **JSON-LD Support**: Automatic structured data for WebSite, BlogPosting, Person, and Breadcrumbs.
-  - **Canonical URLs**: Built-in support for canonical links and robots meta tags.
-  - **Dynamic OG Images**: Automatically generated social preview images for every post.
-  - **RSS Feed & Sitemap**: Ready-to-use RSS and sitemap generation.
-- **✍️ Enhanced Markdown**:
-  - **Shiki Syntax Highlighting**: Includes line highlights, diffs, and word highlighting.
-  - **Auto-generated TOC**: Interactive table of contents with scroll spying.
-  - **Heading Anchor Links**: Clickable links for sharing specific sections.
-  - **Mermaid Diagrams**: Support for flowcharts and diagrams directly in markdown.
-  - **Emoji Support**: Native emoji shortcodes (`:rocket:`, etc.).
-  - **Multi-language Support**: Link posts to their translated versions (e.g. English <-> Russian) with automatic flag indicators.
-- **🧹 Modular Architecture**: Well-organized components and content collections.
+## 快速开始
 
-## 🛠️ Tech Stack
-
-- **Framework**: [Astro 5](https://astro.build/)
-- **UI Components**: [Svelte 5](https://svelte.dev/)
-- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
-- **Content**: Markdown & MDX
-- **Optimization**: Sharp, Shiki, Partytown
-- **Icons**: Lucide & custom SVGs
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) (LTS recommended)
-- [pnpm](https://pnpm.io/) (This project is configured for pnpm)
-
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/alec-c4/spaceship.git
-   cd spaceship
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   pnpm install
-   ```
-
-3. Start the development server:
-
-   ```bash
-   pnpm dev
-   ```
-
-4. Build for production:
-   ```bash
-   pnpm build
-   ```
-
-## 📂 Project Structure
-
-Spaceship uses an **"Updatable Content"** architecture. All your personal data is separated from the core template code, allowing you to update the engine easily.
-
-```text
-/
-├── site/              # 🟢 YOUR DATA (Keep this!)
-│   ├── assets/        # Your personal images (favicon, profile)
-│   ├── content/       # Your posts, projects, and bio
-│   └── config.ts      # Your site configuration
-├── src/               # ⚙️ Core Engine (Updateable)
-│   ├── components/    # UI components
-│   ├── layouts/       # Page templates
-│   ├── lib/           # Logic and utilities
-│   └── pages/         # Routes
-├── public/            # Static files
-├── astro.config.mjs   # Astro settings
-└── package.json
+```bash
+pnpm install
+pnpm dev        # http://localhost:4321
 ```
 
-## 📖 Content Management
+Astro 7 的 dev server 是后台守护进程，重复执行 `pnpm dev` 不会重启它：
 
-### ✍️ Adding Content
-
-Manage your content in `site/content/`.
-
-- **Posts**: `site/content/posts/`
-- **Projects**: `site/content/projects/`
-- **About**: `site/content/about/index.md` (Your CV/Bio)
-
-### 📝 Creating Content
-
-Spaceship includes tools to make content creation faster:
-
-- **VS Code Snippets**: Open any markdown file and type `post`, `project`, or `appearance` then press **Tab** to generate the frontmatter automatically.
-- **Templates**: Reference files named `_template.md` are available in each content folder as examples.
-- **Dev Container**: A pre-configured development environment is included (`.devcontainer/`) with all necessary extensions and tools.
-
-### 🔧 Configuration
-
-All site-wide settings are in `site/config.ts`:
-
-```typescript
-export const SITE = {
-  author: 'Your Name',
-  title: 'Your Blog',
-  desc: 'Your description',
-  website: 'https://yourdomain.com',
-
-  // Homepage configuration
-  featuredPostsCount: 1, // Number of featured posts to show
-  latestPostsCount: 3, // Number of latest posts to show
-
-  // CTA block configuration
-  cta: {
-    enabled: true,
-    filePath: 'site/cta.md', // Markdown file with CTA content
-  },
-
-  // Comments configuration (GitHub Discussions via Giscus)
-  comments: {
-    enabled: false, // Set to true after configuring
-    repo: 'username/repo',
-    repoId: '', // Get from https://giscus.app
-    categoryId: '', // Get from https://giscus.app
-    // ... more options
-  },
-
-  // Analytics
-  googleAnalyticsId: 'G-XXXXXXXXXX', // Offloaded via Partytown
-};
+```bash
+pnpm astro dev status   # 查看状态
+pnpm astro dev stop     # 停止
+pnpm astro dev logs     # 查看日志
 ```
 
-## 📚 Documentation
+## 常用命令
 
-Comprehensive guides are available as blog posts in your installation:
+| 命令             | 用途                       |
+| ---------------- | -------------------------- |
+| `pnpm dev`       | 本地开发，草稿可见         |
+| `pnpm build`     | 生产构建，产物在 `dist/`   |
+| `pnpm preview`   | 预览构建产物               |
+| `pnpm check`     | 类型检查（Astro + Svelte） |
+| `pnpm lint`      | ESLint                     |
+| `pnpm check:all` | 上面两项一起跑，提交前用   |
+| `pnpm format`    | Prettier 格式化            |
 
-- **[How to Publish Posts](docs/how-to-publish-posts.md)** - Complete guide to creating posts, frontmatter options, images, and advanced features
-- **[Configuring Spaceship](docs/configuring-spaceship.md)** - All configuration options, deployment, and customization
+## 目录结构
 
-### Quick Links
+核心约定：**`src/` 是引擎，`site/` 是内容**。日常写作只碰 `site/`。
 
-- **Creating Posts**: `site/content/posts/your-post.md`
-- **Adding Projects**: `site/content/projects/your-project.md`
-- **Customizing CTA**: Edit `site/cta.md`
-- **Configuring Comments**: Get settings from [giscus.app](https://giscus.app)
-- **Analytics**: Add your GA4 ID to `site/config.ts`
+```
+site/
+├── config.ts            # 站点配置：标题、社交链接、首页板块、评论
+├── hero.md              # 首页 hero 文案
+├── cta.md               # 文末行动号召
+├── assets/              # favicon、OG 图、头像
+└── content/
+    ├── posts/           # 文章
+    ├── projects/        # 项目条目
+    ├── appearances/     # 演讲、播客
+    └── about/           # 关于页
 
-## ☁️ Deployment
+src/
+├── pages/               # 路由（文件名即网址）
+├── components/          # Svelte / Astro 组件
+├── layouts/             # 页面外壳
+├── lib/utils/           # 工具函数
+├── styles/global.css    # 全站样式
+└── content.config.ts    # 内容集合的 schema 定义
+```
 
-Spaceship is a static site by default (SSG), but can be easily converted to SSR using Astro Adapters.
+## 写文章
 
-### Static Hosting (Recommended)
+在 `site/content/posts/` 新建 `.md` 或 `.mdx`：
 
-You can deploy to **Vercel**, **Netlify**, **Cloudflare Pages**, or **GitHub Pages** without any extra configuration. Just push your code.
+```yaml
+---
+title: 标题
+description: 摘要，用于 SEO 和列表页
+pubDate: 2026-07-31
+tags: [标签]
+draft: false
+lang: 'zh'
+---
+```
 
-### SSR & Advanced Features
+字段由 `src/content.config.ts` 的 zod schema 校验，写错构建会直接失败。
+完整字段说明见夹具文章《如何发布文章》（仅在 `pnpm dev` 中可见）。
 
-If you need dynamic features, install the appropriate adapter:
+## 草稿机制
 
-- **Vercel**: `pnpm astro add vercel`
-- **Netlify**: `pnpm astro add netlify`
-- **Cloudflare**: `pnpm astro add cloudflare`
-- **Node.js**: `pnpm astro add node` (For VPS/Docker)
+`draft: true` 或 `pubDate` 为未来日期的内容：
 
-More details: [Astro Deployment Guide](https://docs.astro.build/en/guides/deploy/)
+- 在 `pnpm dev` 中**可见**
+- 在 `pnpm build` 的产物中**被排除**
 
-## � Updating
+三个集合（posts / projects / appearances）行为一致，逻辑在
+`src/lib/utils/posts.ts` 和 `src/lib/utils/collections.ts`。
 
-Spaceship is designed with a "core vs content" separation. This makes updating to new versions straightforward:
+## 回归夹具
 
-1. **Keep your `site/` folder**: This contains all your posts, projects, assets, and configuration.
-2. **Download the latest version** of Spaceship.
-3. **Replace the core files** in your project with the new ones:
-   - `src/` (The engine)
-   - `public/` (Static assets shell)
-   - `astro.config.mjs` (Main configuration)
-   - `package.json` & `pnpm-lock.yaml` (Dependencies)
-   - `tsconfig.json` (Tooling config)
-4. **Run `pnpm install`** to update dependencies.
-5. **Verify**: Your content in `site/` will automatically be picked up by the new engine.
+`site/content/` 里有一批标记为 `回归夹具` 标签的内容，全部是 `draft: true`，
+只在开发环境可见，用于升级依赖后验证渲染是否正常。
 
-## �📜 License
+其中 **`upgrade-smoke-test.mdx`** 是主入口：一页覆盖代码高亮、shiki 的三个
+transformer、mermaid、emoji、外链属性和标题锚点，每节都写了预期结果。
 
-MIT License © [Alexey Poimtsev](https://github.com/alec-c4)
+升级依赖后的建议流程：
+
+```bash
+pnpm update
+pnpm build && pnpm check && pnpm lint
+pnpm dev    # 打开冒烟测试页，逐项对照
+```
+
+注意 mermaid 是客户端渲染的，只能肉眼验证，构建产物里查不出来。
+
+## 部署
+
+推送到 `main` 触发 Vercel 自动构建部署。`.github/workflows/ci.yml` 会在
+push 和 PR 时跑 lint、格式检查、类型检查和构建。
+
+## 致谢
+
+本项目基于 [Spaceship](https://github.com/alec-c4/spaceship)（MIT，
+Copyright © 2026 Alexey Poimtsev）构建，此后已独立演进：升级到 Astro 7、
+补充了 shiki transformer 样式、为 projects/appearances 集合增加草稿支持，
+并将示例内容改造为中文回归夹具。原始许可证见 `LICENSE`。
