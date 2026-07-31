@@ -86,7 +86,7 @@
 
 {#if config.enabled}
   <section class="mt-16 pt-12 border-t border-border">
-    <h2 class="text-2xl font-bold text-foreground mb-6">Comments</h2>
+    <h2 class="text-2xl font-bold text-foreground mb-6">评论</h2>
     <div bind:this={giscusContainer} class="giscus"></div>
   </section>
 {/if}

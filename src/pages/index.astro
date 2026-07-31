@@ -29,7 +29,7 @@ const appearances = (await getPublishedAppearances())
   .slice(0, SITE.homeAppearances.count);
 ---
 
-<Layout title="Welcome">
+<Layout title="首页">
   <!-- 1. Hero Section -->
   <section
     class="flex flex-col-reverse md:flex-row items-center gap-8 sm:gap-12 lg:gap-16 mb-12 lg:mb-16"
@@ -72,13 +72,11 @@ const appearances = (await getPublishedAppearances())
       featuredPosts.length > 0 && (
         <section>
           <div class="flex items-baseline justify-between mb-8 sm:mb-12">
-            <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
-              Featured
-            </h2>
+            <h2 class="text-xs font-bold tracking-[0.15em] text-muted-foreground">精选</h2>
             <div class="h-px flex-1 mx-4 sm:mx-8 bg-border opacity-70" />
             <a
               href="/posts"
-              class="px-2 py-0.5 rounded-md text-xs font-bold uppercase tracking-widest hover:bg-accent hover:text-primary transition-all no-underline"
+              class="px-2 py-0.5 rounded-md text-xs font-bold tracking-wide hover:bg-accent hover:text-primary transition-all no-underline"
             >
               See all posts
             </a>
@@ -95,14 +93,12 @@ const appearances = (await getPublishedAppearances())
     <!-- 3. Latest Posts -->
     <section>
       <div class="flex items-baseline justify-between mb-8 sm:mb-12">
-        <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
-          Latest Writing
-        </h2>
+        <h2 class="text-xs font-bold tracking-[0.15em] text-muted-foreground">最新文章</h2>
         <div class="h-px flex-1 mx-4 sm:mx-8 bg-border opacity-70"></div>
         <a
           href="/posts"
-          class="px-2 py-0.5 rounded-md text-xs font-bold uppercase tracking-widest hover:bg-accent hover:text-primary transition-all no-underline"
-          >Writing Archive</a
+          class="px-2 py-0.5 rounded-md text-xs font-bold tracking-wide hover:bg-accent hover:text-primary transition-all no-underline"
+          >全部文章</a
         >
       </div>
       <div class="grid gap-3 sm:gap-4">
@@ -119,16 +115,14 @@ const appearances = (await getPublishedAppearances())
       SITE.homeProjects.enabled && projects.length > 0 && (
         <section>
           <div class="flex items-baseline justify-between mb-8 sm:mb-12">
-            <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
-              Projects
-            </h2>
+            <h2 class="text-xs font-bold tracking-[0.15em] text-muted-foreground">项目</h2>
             <div class="h-px flex-1 mx-4 sm:mx-8 bg-border opacity-70" />
             <a
               href="/projects"
               aria-label="View all projects"
-              class="px-2 py-0.5 rounded-md text-xs font-bold uppercase tracking-widest hover:bg-accent hover:text-primary transition-all no-underline"
+              class="px-2 py-0.5 rounded-md text-xs font-bold tracking-wide hover:bg-accent hover:text-primary transition-all no-underline"
             >
-              All Projects
+              全部项目
             </a>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
@@ -164,7 +158,13 @@ const appearances = (await getPublishedAppearances())
                                   : 'bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 border border-indigo-500/20'
                             }`}
                           >
-                            {type === 'open-source' ? 'Open Source' : type}
+                            {type === 'open-source'
+                              ? '开源'
+                              : type === 'commercial'
+                                ? '商业'
+                                : type === 'social'
+                                  ? '公益'
+                                  : type}
                           </span>
                         ))}
                       </div>
@@ -190,7 +190,7 @@ const appearances = (await getPublishedAppearances())
                       rel={isExternal ? 'noopener noreferrer' : undefined}
                       class="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors no-underline"
                     >
-                      {isExternal ? 'Visit Site' : 'View Details'}
+                      {isExternal ? '访问' : '查看详情'}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -248,15 +248,13 @@ const appearances = (await getPublishedAppearances())
       SITE.homeAppearances.enabled && appearances.length > 0 && (
         <section>
           <div class="flex items-baseline justify-between mb-8 sm:mb-12">
-            <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
-              Talks & Appearances
-            </h2>
+            <h2 class="text-xs font-bold tracking-[0.15em] text-muted-foreground">分享与发表</h2>
             <div class="h-px flex-1 mx-4 sm:mx-8 bg-border opacity-70" />
             <a
               href="/appearances"
-              class="px-2 py-0.5 rounded-md text-xs font-bold uppercase tracking-widest hover:bg-accent hover:text-primary transition-all no-underline"
+              class="px-2 py-0.5 rounded-md text-xs font-bold tracking-wide hover:bg-accent hover:text-primary transition-all no-underline"
             >
-              View appearances
+              全部分享
             </a>
           </div>
           <div class="space-y-4 sm:space-y-6">

@@ -45,14 +45,14 @@ const sortedTags = Object.entries(tagCounts)
   .slice(0, 20); // Top 20 tags
 ---
 
-<Layout title="Blog" description={SITE.blogDescription} schema={schema}>
-  <Breadcrumbs items={[{ name: 'Blog', href: '/posts' }]} />
+<Layout title="文章" description={SITE.blogDescription} schema={schema}>
+  <Breadcrumbs items={[{ name: '文章', href: '/posts' }]} />
 
   <div class="mb-10 sm:mb-12">
     <h1
       class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground leading-[1.1]"
     >
-      Writing
+      文章
     </h1>
     <p class="mt-3 text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
       {SITE.blogDescription}

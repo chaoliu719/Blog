@@ -14,14 +14,14 @@ const schema = getBreadcrumbSchema([
 const projects = (await getPublishedProjects()).sort((a, b) => a.data.order - b.data.order);
 ---
 
-<Layout title="Projects" description={SITE.projectsDescription} schema={schema}>
-  <Breadcrumbs items={[{ name: 'Projects', href: '/projects' }]} />
+<Layout title="项目" description={SITE.projectsDescription} schema={schema}>
+  <Breadcrumbs items={[{ name: '项目', href: '/projects' }]} />
 
   <div class="mb-12 sm:mb-16 lg:mb-24">
     <h1
       class="text-3xl sm:text-4xl lg:text-5xl 3xl:text-6xl font-black tracking-tight text-foreground leading-[1.1]"
     >
-      Projects
+      项目
     </h1>
     <p class="mt-4 text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
       {SITE.projectsDescription}
@@ -62,7 +62,13 @@ const projects = (await getPublishedProjects()).sort((a, b) => a.data.order - b.
                             : 'bg-indigo-600/10 text-indigo-900 dark:text-indigo-400 border border-indigo-600/20'
                       }`}
                     >
-                      {type === 'open-source' ? 'Open Source' : type}
+                      {type === 'open-source'
+                        ? '开源'
+                        : type === 'commercial'
+                          ? '商业'
+                          : type === 'social'
+                            ? '公益'
+                            : type}
                     </span>
                   ))}
                 </div>
@@ -93,7 +99,7 @@ const projects = (await getPublishedProjects()).sort((a, b) => a.data.order - b.
                 }
                 class="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors no-underline"
               >
-                {isExternal ? 'Visit Site' : 'View Details'}
+                {isExternal ? '访问' : '查看详情'}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"

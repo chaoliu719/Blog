@@ -35,7 +35,7 @@
     <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
   </svg>
   <span class="hidden sm:inline-block text-xs font-semibold opacity-80 group-hover:opacity-100"
-    >Search</span
+    >搜索</span
   >
   <kbd
     class="hidden lg:inline-flex h-5 items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-xs font-medium text-muted-foreground ml-2"
