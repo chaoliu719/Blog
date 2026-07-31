@@ -2,3 +2,6 @@ onlyBuiltDependencies:
   - '@evilmartians/lefthook'
   - esbuild
   - sharp
+
+overrides:
+  lodash-es: ^4.17.23

@@ -61,10 +61,5 @@
     "svelte-eslint-parser": "^1.8.0",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.65.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "lodash-es": "^4.17.23"
-    }
   }
 }
