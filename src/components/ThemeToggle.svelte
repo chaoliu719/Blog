@@ -43,7 +43,7 @@
   <button
     onclick={toggleDropdown}
     class="p-2 rounded-md hover:bg-accent transition-all opacity-70 hover:opacity-100 text-muted-foreground hover:text-primary"
-    aria-label="Theme Menu"
+    aria-label="主题切换"
     aria-expanded={isOpen}
     aria-haspopup="true"
   >

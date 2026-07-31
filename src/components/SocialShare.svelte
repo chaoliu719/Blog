@@ -55,7 +55,7 @@
         target="_blank"
         rel="noopener noreferrer"
         class="p-2.5 rounded-xl border border-border hover:bg-accent text-muted-foreground hover:text-primary transition-all duration-300"
-        aria-label={`Share on ${platform.name}`}
+        aria-label={`分享到 ${platform.name}`}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@
     <button
       onclick={copyToClipboard}
       class="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-border hover:bg-accent text-muted-foreground hover:text-primary transition-all duration-300"
-      aria-label="Copy link"
+      aria-label="复制链接"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

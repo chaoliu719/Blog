@@ -18,7 +18,7 @@
 <button
   onclick={() => uiState.openSearch()}
   class="group flex items-center gap-2 px-3 py-2 rounded-md bg-secondary/50 hover:bg-secondary text-muted-foreground hover:text-foreground transition-all duration-200 border border-transparent hover:border-border/50"
-  aria-label="Search"
+  aria-label="搜索"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"

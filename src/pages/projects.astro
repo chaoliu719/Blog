@@ -94,8 +94,8 @@ const projects = (await getPublishedProjects()).sort((a, b) => a.data.order - b.
                 rel={isExternal ? 'noopener noreferrer' : undefined}
                 aria-label={
                   isExternal
-                    ? `Visit ${project.data.title} project website`
-                    : `View details for project ${project.data.title}`
+                    ? `访问 ${project.data.title} 的项目网站`
+                    : `查看 ${project.data.title} 的详情`
                 }
                 class="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors no-underline"
               >
@@ -124,7 +124,7 @@ const projects = (await getPublishedProjects()).sort((a, b) => a.data.order - b.
                   target="_blank"
                   rel="noopener noreferrer"
                   class="ml-auto inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors no-underline"
-                  aria-label={`GitHub repository for ${project.data.title}`}
+                  aria-label={`${project.data.title} 的 GitHub 仓库`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

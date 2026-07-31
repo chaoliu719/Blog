@@ -64,7 +64,7 @@ export default defineConfig({
             behavior: 'prepend',
             properties: {
               className: ['heading-link'],
-              ariaLabel: 'Link to section',
+              ariaLabel: '跳转到本节',
             },
             content: {
               type: 'text',

@@ -8,7 +8,7 @@
 
 <nav
   class="flex items-center flex-wrap gap-x-2 gap-y-1 text-xs font-bold uppercase tracking-widest text-muted-foreground mb-8 sm:mb-12"
-  aria-label="Breadcrumb"
+  aria-label="面包屑导航"
 >
   <a href="/" class="hover:text-primary transition-colors flex items-center shrink-0"> 首页 </a>
 

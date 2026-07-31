@@ -119,7 +119,7 @@ const appearances = (await getPublishedAppearances())
             <div class="h-px flex-1 mx-4 sm:mx-8 bg-border opacity-70" />
             <a
               href="/projects"
-              aria-label="View all projects"
+              aria-label="查看全部项目"
               class="px-2 py-0.5 rounded-md text-xs font-bold tracking-wide hover:bg-accent hover:text-primary transition-all no-underline"
             >
               全部项目
@@ -215,7 +215,7 @@ const appearances = (await getPublishedAppearances())
                         target="_blank"
                         rel="noopener noreferrer"
                         class="ml-auto inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors no-underline"
-                        aria-label={`GitHub repository for ${project.data.title}`}
+                        aria-label={`${project.data.title} 的 GitHub 仓库`}
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
