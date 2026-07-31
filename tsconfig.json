@@ -9,11 +9,10 @@
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "strict": true,
-    "baseUrl": ".",
     "paths": {
-      "@/config": ["site/config.ts"],
-      "@/*": ["src/*"],
-      "~/*": ["src/*"],
+      "@/config": ["./site/config.ts"],
+      "@/*": ["./src/*"],
+      "~/*": ["./src/*"],
       "$lib": ["./src/lib"],
       "$lib/*": ["./src/lib/*"]
     },
