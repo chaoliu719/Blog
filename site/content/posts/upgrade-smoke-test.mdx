@@ -76,11 +76,19 @@ const newValue = 7; // [!code ++]
 
 ## Emoji 与外链
 
+预期：下面这行显示三个 emoji 图案（火箭、彩带、对勾），而不是 `:rocket:` 这样的文字。
+
 remark-emoji 测试 :rocket: :tada: :white_check_mark:
 
-外链测试：[Astro 官网](https://astro.build) 应该带 `target="_blank"` 和 `rel="noopener"`。
+**外链**：[Astro 官网](https://astro.build)
+预期：点击后**在新标签页打开**，当前页面留在原地。
 
-站内链接：[关于](/about) 不应该被加外链属性。
+**站内链接**：[关于](/about)
+预期：点击后**在当前标签页跳转**，不开新标签。
+
+（原理：`rehype-external-links` 只给站外链接加 `target="_blank"`，
+顺带加 `rel="noopener noreferrer"` 防止新页面通过 `window.opener` 操纵原页面。
+站内链接不该被加这些属性——所以上面两条的行为必须不一样。）
 
 ## 中文标题锚点测试
 

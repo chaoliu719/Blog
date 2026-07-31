@@ -260,6 +260,86 @@
   border-color: #494d64 !important; /* Catppuccin Surface 1 */
 }
 
+/* Shiki transformer styles.
+   The transformers in astro.config.mjs emit these classes, but nothing styled
+   them, so the annotations were invisible. Lines are stretched into the code
+   block's 1.5rem padding so their background spans the full width. */
+.astro-code .line.highlighted,
+.astro-code .line.diff {
+  display: inline-block;
+  width: calc(100% + 3rem);
+  margin-inline: -1.5rem;
+  padding-inline: 1.5rem;
+}
+
+/* [!code highlight] */
+.astro-code .line.highlighted {
+  background-color: rgba(101, 117, 133, 0.16);
+  box-shadow: inset 2px 0 0 rgba(101, 117, 133, 0.5);
+}
+
+.dark .astro-code .line.highlighted {
+  background-color: rgba(202, 211, 245, 0.1);
+  box-shadow: inset 2px 0 0 rgba(202, 211, 245, 0.45);
+}
+
+/* [!code word:...] */
+.astro-code .highlighted-word {
+  background-color: rgba(101, 117, 133, 0.18);
+  border: 1px solid rgba(101, 117, 133, 0.35);
+  border-radius: 4px;
+  padding: 0.1em 0.25em;
+}
+
+.dark .astro-code .highlighted-word {
+  background-color: rgba(202, 211, 245, 0.14);
+  border-color: rgba(202, 211, 245, 0.3);
+}
+
+/* [!code ++] and [!code --] */
+.astro-code .line.diff.add {
+  background-color: rgba(22, 131, 60, 0.16);
+}
+
+.astro-code .line.diff.remove {
+  background-color: rgba(200, 40, 41, 0.14);
+  opacity: 0.85;
+}
+
+.dark .astro-code .line.diff.add {
+  background-color: rgba(166, 218, 149, 0.16);
+}
+
+.dark .astro-code .line.diff.remove {
+  background-color: rgba(237, 135, 150, 0.16);
+}
+
+/* Sit the +/- marker in the block's left padding so code stays aligned. */
+.astro-code .line.diff::before {
+  display: inline-block;
+  width: 1rem;
+  margin-left: -1rem;
+  font-weight: 700;
+}
+
+.astro-code .line.diff.add::before {
+  content: '+';
+  color: rgb(22, 131, 60);
+}
+
+.astro-code .line.diff.remove::before {
+  content: '-';
+  color: rgb(200, 40, 41);
+}
+
+.dark .astro-code .line.diff.add::before {
+  color: rgb(166, 218, 149);
+}
+
+.dark .astro-code .line.diff.remove::before {
+  color: rgb(237, 135, 150);
+}
+
 .dark .prose {
   --tw-prose-body: #d1d5dc;
   --tw-prose-headings: #eaedf3;
