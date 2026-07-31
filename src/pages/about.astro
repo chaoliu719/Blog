@@ -45,6 +45,8 @@ const socialIcons: Record<string, { paths: string; fill?: boolean }> = {
 
 // Display name overrides
 const displayNames: Record<string, string> = {
+  github: 'GitHub',
+  x: 'X',
   xiaohongshu: '小红书',
 };
 
@@ -60,8 +62,7 @@ function getDisplayName(name: string): string {
 
 const aboutPost = await getEntry('about', 'index');
 const { Content } = aboutPost ? await render(aboutPost) : { Content: null };
-const aboutTitle =
-  aboutPost?.data.title || `I'm ${SITE.author}, a software designer and entrepreneur.`;
+const aboutTitle = aboutPost?.data.title || `我是 ${SITE.author}`;
 ---
 
 <Layout
@@ -69,7 +70,7 @@ const aboutTitle =
   description={`Learn more about ${SITE.author}, a developer and designer focused on building premium web experiences.`}
   schema={schema}
 >
-  <Breadcrumbs items={[{ name: 'About', href: '/about' }]} />
+  <Breadcrumbs items={[{ name: '关于', href: '/about' }]} />
 
   <div class="flex flex-col lg:flex-row gap-8 lg:gap-10">
     <!-- Left Sidebar: Profile + Social -->
@@ -89,9 +90,7 @@ const aboutTitle =
 
       <!-- Connect Section -->
       <div>
-        <h2 class="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
-          Connect
-        </h2>
+        <h2 class="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">找我</h2>
         <div class="space-y-1">
           {
             Object.entries(SITE.social).map(([name, url]) => (
