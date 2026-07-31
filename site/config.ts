@@ -82,7 +82,7 @@ export const SITE: SiteConfig = {
   projectsDescription: '一些自己做的小工具，大多是开源的。',
 
   // Homepage post counts
-  featuredPostsCount: 0,
+  featuredPostsCount: 2,
   latestPostsCount: 15,
 
   // Homepage projects

@@ -3,6 +3,7 @@ title: '把录音自动整理进 Notion：一个月两毛三的方案'
 description: 'flomo 要 299 一年，夸克免费但导不出来。于是自己搓了个工具：语音备忘录分享给快捷指令，等几分钟，Notion 里就多出一篇带标题、摘要、分类、标签和转写原文的笔记。一个月账单两毛三。'
 pubDate: 2026-07-29
 tags: [AI, 自动化, Notion, 工作流]
+featured: true
 draft: false
 lang: 'zh'
 ---
