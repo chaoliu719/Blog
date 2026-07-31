@@ -63,8 +63,8 @@ export interface SiteConfig {
 }
 
 export const SITE: SiteConfig = {
-  author: 'Maos',
-  title: 'Maos 的 AI 实验室',
+  author: 'Turi',
+  title: 'Turi 的 AI 实验室',
   desc: '正在探索 AI 如何改造组织与业务，记录实践与思考',
   ogImage: 'og.png',
   lang: 'zh-CN',

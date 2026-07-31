@@ -1,4 +1,4 @@
-# Maos 的 AI 实验室
+# Turi 的 AI 实验室
 
 个人博客源码，部署在 [liuchao.life](https://liuchao.life)。
 

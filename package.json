@@ -1,7 +1,7 @@
 {
   "name": "liuchao-blog",
   "version": "0.1.0",
-  "description": "Maos 的 AI 实验室 — 个人博客",
+  "description": "Turi 的 AI 实验室 — 个人博客",
   "private": true,
   "license": "MIT",
   "type": "module",
