@@ -260,6 +260,20 @@
   border-color: #494d64 !important; /* Catppuccin Surface 1 */
 }
 
+/* Article images.
+   Screenshots repurposed from vertical social posts can be twice as tall as
+   they are wide, which swamps the text at full content width. Capping the
+   height keeps a portrait image roughly a screenful and lets it shrink to its
+   natural width, while landscape images are unaffected. */
+.prose img {
+  max-height: 70vh;
+  width: auto;
+  max-width: 100%;
+  margin-inline: auto;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
 /* Shiki transformer styles.
    The transformers in astro.config.mjs emit these classes, but nothing styled
    them, so the annotations were invisible. Lines are stretched into the code

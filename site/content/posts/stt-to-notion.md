@@ -3,7 +3,7 @@ title: '把录音自动整理进 Notion：一个月两毛三的方案'
 description: 'flomo 要 299 一年，夸克免费但导不出来。于是自己搓了个工具：语音备忘录分享给快捷指令，等几分钟，Notion 里就多出一篇带标题、摘要、分类、标签和转写原文的笔记。一个月账单两毛三。'
 pubDate: 2026-07-31
 tags: [AI, 自动化, Notion, 工作流]
-draft: true
+draft: false
 lang: 'zh'
 ---
 
@@ -13,13 +13,13 @@ lang: 'zh'
 
 flomo 最多能录三十分钟，结束之后自动帮你转成文字。很方便，但很贵——免费版一周只能录 3 条、每条 1 分钟，想用得爽就得开会员。
 
-![flomo 的会员弹窗](/posts/stt-to-notion/flomo-paywall.png)
+![flomo 的会员弹窗](./images/stt-to-notion/flomo-paywall.png)
 
 后来我切到了夸克。它有个功能叫「录音纪要」，应该还在内测，完全免费而且不限时长，很好用，但入口藏得非常深。好在夸克支持导入音频，所以我的用法变成了：随手用苹果语音备忘录录，想起来再导进夸克。
 
 我最喜欢它转写之后自动生成的总结和标签。录音太长的时候，转成文字也不想看，扫一眼总结就知道自己当时想表达什么。它还能提取关键词，这个很有用——因为我的录音场景特别杂：
 
-![各种时长的录音](/posts/stt-to-notion/recording-lengths.png)
+![各种时长的录音](./images/stt-to-notion/recording-lengths.png)
 
 和领导的谈话、听课、播客、还有大量自己的碎碎念，从八秒到一小时都有。打上标签之后搜起来就容易多了。
 
@@ -31,15 +31,15 @@ flomo 最多能录三十分钟，结束之后自动帮你转成文字。很方�
 
 录完音，在系统分享菜单里点一下快捷指令，就结束了。
 
-![分享给快捷指令](/posts/stt-to-notion/shortcut-share.png)
+![分享给快捷指令](./images/stt-to-notion/shortcut-share.png)
 
 剩下的全自动。等几分钟，Notion 里就有了。
 
-![后台处理流程](/posts/stt-to-notion/pipeline.png)
+![后台处理流程](./images/stt-to-notion/pipeline.png)
 
 服务器在后台依次做四件事：语音转文字、自动分类、写总结、打标签。最后存成一篇 Notion 文档，包含标题、摘要、分类、标签和完整原文。
 
-![Notion 里的结果](/posts/stt-to-notion/notion-result.png)
+![Notion 里的结果](./images/stt-to-notion/notion-result.png)
 
 ## 三个我觉得最值的地方
 
@@ -49,7 +49,7 @@ flomo 最多能录三十分钟，结束之后自动帮你转成文字。很方�
 
 所以我做了个机制：**你在 Notion 里预设好几种分类，每次上传录音，AI 只能从这些分类里选一个。**
 
-![自动分类与标签](/posts/stt-to-notion/auto-tags.png)
+![自动分类与标签](./images/stt-to-notion/auto-tags.png)
 
 分类不够用了随时加，AI 会实时读取最新的分类列表——**不需要改代码，也不需要重新部署**。这样每段录音都能落进你设定好的体系，不会再自己造出一堆乱七八糟的类别。
 
@@ -65,17 +65,17 @@ flomo 最多能录三十分钟，结束之后自动帮你转成文字。很方�
 
 我这个月转了几个小时的录音，大家猜猜花了多少钱。
 
-![账单](/posts/stt-to-notion/bill.png)
+![账单](./images/stt-to-notion/bill.png)
 
 **两毛三。**
 
 明细在这里，拆到每一笔甚至不到一厘：
 
-![费用明细](/posts/stt-to-notion/cost-breakdown.png)
+![费用明细](./images/stt-to-notion/cost-breakdown.png)
 
 而且这两毛三主要还是存储费用——大模型那部分基本没花钱，因为平台送的免费额度我才用掉一小部分：
 
-![免费额度](/posts/stt-to-notion/free-quota.png)
+![免费额度](./images/stt-to-notion/free-quota.png)
 
 照这个消耗速度，光免费额度就够处理二十来个小时的录音。
 

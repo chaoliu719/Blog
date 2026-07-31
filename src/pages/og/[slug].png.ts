@@ -5,6 +5,7 @@ import { html } from 'satori-html';
 import { Resvg } from '@resvg/resvg-js';
 import { SITE } from '@/config';
 import { getPublishedPosts, getPostSlug } from '@/lib/utils/posts';
+import { getFontsFor } from '@/lib/utils/ogFonts';
 
 export async function getStaticPaths() {
   const posts = await getPublishedPosts();
@@ -17,10 +18,12 @@ export async function getStaticPaths() {
 export const GET: APIRoute = async ({ props }) => {
   const { post } = props;
 
-  // Minimal buffer fetch for a font (Inter Bold)
-  const fontData = await fetch(
-    'https://cdn.jsdelivr.net/fontsource/fonts/inter@5.0.19/latin-700-normal.woff'
-  ).then((res) => res.arrayBuffer());
+  const description = post.data.description || `A post on ${SITE.title}`;
+  const dateLabel = post.data.pubDate.toLocaleDateString('zh-CN', { dateStyle: 'long' });
+  // Only the subsets covering this card's text get loaded.
+  const { fonts, fontFamily } = await getFontsFor(
+    `${post.data.title}${description}${dateLabel}${SITE.website}`
+  );
 
   const markup = html`
     <div
@@ -33,7 +36,7 @@ export const GET: APIRoute = async ({ props }) => {
       justify-content: center;
       background-color: #0d1117;
       color: #fff;
-      font-family: 'Inter';
+      font-family: ${fontFamily};
       padding: 40px;
       text-align: center;
     "
@@ -52,9 +55,7 @@ export const GET: APIRoute = async ({ props }) => {
         ${post.data.title}
       </div>
 
-      <div style="font-size: 32px; color: #9ca3af;">
-        ${post.data.description || `A post on ${SITE.title}`}
-      </div>
+      <div style="font-size: 32px; color: #9ca3af;">${description}</div>
 
       <div
         style="
@@ -67,9 +68,7 @@ export const GET: APIRoute = async ({ props }) => {
       >
         <span style="margin-right: 16px;">${SITE.website.replace(/^https?:\/\//, '')}</span>
         <span>•</span>
-        <span style="margin-left: 16px;"
-          >${post.data.pubDate.toLocaleDateString('en-US', { dateStyle: 'long' })}</span
-        >
+        <span style="margin-left: 16px;">${dateLabel}</span>
       </div>
     </div>
   `;
@@ -77,14 +76,7 @@ export const GET: APIRoute = async ({ props }) => {
   const svg = await satori(markup, {
     width: 1200,
     height: 630,
-    fonts: [
-      {
-        name: 'Inter',
-        data: fontData,
-        weight: 700,
-        style: 'normal',
-      },
-    ],
+    fonts,
   });
 
   const resvg = new Resvg(svg, {
