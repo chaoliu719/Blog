@@ -14,7 +14,7 @@ interface NavLink {
 const navLinks: NavLink[] = [
   { name: '文章', href: '/posts' },
   { name: '项目', href: '/projects', enabled: SITE.pages.projects.enabled },
-  { name: '分享', href: '/appearances', enabled: SITE.pages.appearances.enabled },
+  { name: '其他平台', href: '/appearances', enabled: SITE.pages.appearances.enabled },
   { name: '关于', href: '/about' },
 ].filter((link) => link.enabled !== false);
 ---

@@ -57,7 +57,7 @@
     class="sticky top-32 lg:top-40 max-h-[calc(100vh-160px)] overflow-y-auto pl-2 pr-4 scrollbar-hide"
   >
     <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-6 opacity-80">
-      On this page
+      本页目录
     </h2>
     <div class="flex flex-col gap-3 relative">
       <!-- Background Vertical Line -->

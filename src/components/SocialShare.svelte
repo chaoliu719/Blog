@@ -46,9 +46,7 @@
 </script>
 
 <div class="flex flex-col gap-4 py-8 border-t border-border/50">
-  <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
-    Share this post
-  </h3>
+  <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">分享这篇文章</h3>
 
   <div class="flex items-center gap-2">
     {#each platforms as platform (platform.name)}
@@ -95,7 +93,7 @@
         <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
       </svg>
       <span class="text-xs font-bold uppercase tracking-widest">
-        {copied ? 'Copied!' : 'Copy Link'}
+        {copied ? '已复制！' : '复制链接'}
       </span>
     </button>
   </div>
