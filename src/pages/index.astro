@@ -74,17 +74,19 @@ const appearances = (await getPublishedAppearances())
     </div>
   </section>
 
-  <div class="flex flex-col gap-24 lg:gap-32">
+  <div class="flex flex-col gap-16 lg:gap-20">
     <!-- 2. Featured Posts -->
     {
       featuredPosts.length > 0 && (
         <section>
-          <div class="flex items-baseline justify-between mb-8 sm:mb-12">
-            <h2 class="text-xs font-bold tracking-[0.15em] text-muted-foreground">精选</h2>
-            <div class="h-px flex-1 mx-4 sm:mx-8 bg-border opacity-70" />
+          <div class="flex items-baseline justify-between mb-6 sm:mb-8">
+            <h2 class="text-xl sm:text-2xl font-black tracking-tight text-foreground shrink-0">
+              精选
+            </h2>
+            <div class="h-px flex-1 mx-4 sm:mx-6 bg-border opacity-60 relative -top-1" />
             <a
               href="/posts"
-              class="px-2 py-0.5 rounded-md text-xs font-bold tracking-wide hover:bg-accent hover:text-primary transition-all no-underline"
+              class="px-2 py-0.5 rounded-md text-sm font-medium text-muted-foreground shrink-0 hover:bg-accent hover:text-primary transition-all no-underline"
             >
               查看全部文章
             </a>
@@ -100,12 +102,14 @@ const appearances = (await getPublishedAppearances())
 
     <!-- 3. Latest Posts -->
     <section>
-      <div class="flex items-baseline justify-between mb-8 sm:mb-12">
-        <h2 class="text-xs font-bold tracking-[0.15em] text-muted-foreground">最新文章</h2>
-        <div class="h-px flex-1 mx-4 sm:mx-8 bg-border opacity-70"></div>
+      <div class="flex items-baseline justify-between mb-6 sm:mb-8">
+        <h2 class="text-xl sm:text-2xl font-black tracking-tight text-foreground shrink-0">
+          最新文章
+        </h2>
+        <div class="h-px flex-1 mx-4 sm:mx-6 bg-border opacity-60 relative -top-1"></div>
         <a
           href="/posts"
-          class="px-2 py-0.5 rounded-md text-xs font-bold tracking-wide hover:bg-accent hover:text-primary transition-all no-underline"
+          class="px-2 py-0.5 rounded-md text-sm font-medium text-muted-foreground shrink-0 hover:bg-accent hover:text-primary transition-all no-underline"
           >全部文章</a
         >
       </div>
@@ -122,13 +126,15 @@ const appearances = (await getPublishedAppearances())
     {
       SITE.homeProjects.enabled && projects.length > 0 && (
         <section>
-          <div class="flex items-baseline justify-between mb-8 sm:mb-12">
-            <h2 class="text-xs font-bold tracking-[0.15em] text-muted-foreground">项目</h2>
-            <div class="h-px flex-1 mx-4 sm:mx-8 bg-border opacity-70" />
+          <div class="flex items-baseline justify-between mb-6 sm:mb-8">
+            <h2 class="text-xl sm:text-2xl font-black tracking-tight text-foreground shrink-0">
+              项目
+            </h2>
+            <div class="h-px flex-1 mx-4 sm:mx-6 bg-border opacity-60 relative -top-1" />
             <a
               href="/projects"
               aria-label="查看全部项目"
-              class="px-2 py-0.5 rounded-md text-xs font-bold tracking-wide hover:bg-accent hover:text-primary transition-all no-underline"
+              class="px-2 py-0.5 rounded-md text-sm font-medium text-muted-foreground shrink-0 hover:bg-accent hover:text-primary transition-all no-underline"
             >
               全部项目
             </a>
@@ -255,12 +261,14 @@ const appearances = (await getPublishedAppearances())
     {
       SITE.homeAppearances.enabled && appearances.length > 0 && (
         <section>
-          <div class="flex items-baseline justify-between mb-8 sm:mb-12">
-            <h2 class="text-xs font-bold tracking-[0.15em] text-muted-foreground">其他平台</h2>
-            <div class="h-px flex-1 mx-4 sm:mx-8 bg-border opacity-70" />
+          <div class="flex items-baseline justify-between mb-6 sm:mb-8">
+            <h2 class="text-xl sm:text-2xl font-black tracking-tight text-foreground shrink-0">
+              其他平台
+            </h2>
+            <div class="h-px flex-1 mx-4 sm:mx-6 bg-border opacity-60 relative -top-1" />
             <a
               href="/appearances"
-              class="px-2 py-0.5 rounded-md text-xs font-bold tracking-wide hover:bg-accent hover:text-primary transition-all no-underline"
+              class="px-2 py-0.5 rounded-md text-sm font-medium text-muted-foreground shrink-0 hover:bg-accent hover:text-primary transition-all no-underline"
             >
               全部内容
             </a>
