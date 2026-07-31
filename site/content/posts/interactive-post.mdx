@@ -1,0 +1,79 @@
+---
+title: MDX 交互组件测试
+description: MDX 夹具，验证在文章里导入并水合 Svelte 组件，以及 mermaid 图表渲染。
+pubDate: 2026-01-20
+tags: [回归夹具, MDX, Svelte]
+draft: true
+---
+
+import Counter from '../_components/Counter.svelte';
+import GreetingInput from '../_components/GreetingInput.svelte';
+import Mermaid from '@/components/Mermaid.svelte';
+
+# MDX 与 Svelte 组件
+
+这篇夹具验证 **MDX** 的核心能力：在 Markdown 正文里直接使用 Svelte 组件。
+下面每个组件都需要**实际点一下/输入一下**才能确认水合成功——静态构建检查不出来。
+
+## 计数器
+
+预期：点击按钮后数字递增，重置按钮能归零。
+
+<Counter client:load />
+
+## 动态问候
+
+预期：输入框里打字时，下方文字实时跟着变。
+
+<GreetingInput client:load />
+
+## 架构图 :rocket:
+
+预期：下面渲染出一张带配色的流程图（`client:load` 水合）。
+
+<Mermaid
+  client:load
+  chart={`
+graph TD
+    A[MDX 文件] -->|导入| B[Svelte 组件]
+    A -->|撰写| C[Markdown 正文]
+    B -->|水合| D[交互式 UI]
+    C -->|渲染| E[静态 HTML]
+    D --> F[最终页面]
+    E --> F
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style F fill:#bbf,stroke:#333,stroke-width:2px
+`}
+/>
+
+## 为什么用 MDX
+
+1. **Markdown 的简洁** —— 正文写起来不费劲
+2. **Svelte 的交互性** —— 需要时插入动态组件
+3. **类型安全** —— 完整的 TypeScript 支持
+
+### 组件代码
+
+```svelte
+<script lang="ts">
+  import Button from '$lib/components/ui/button/button.svelte';
+  let count = $state(0);
+</script>
+
+<div class="my-6 p-6 border border-border rounded-lg bg-card">
+  <p class="mb-4 text-lg">当前计数：<strong>{count}</strong></p>
+  <Button onclick={() => count++}>递增</Button>
+  <Button variant="outline" onclick={() => (count = 0)} class="ml-2">重置</Button>
+</div>
+```
+
+## 覆盖范围
+
+在 MDX 文件里可以：
+
+- 正常书写 Markdown 内容
+- 导入 Svelte 组件
+- 用 `client:load` 指令让组件水合
+- 静态内容与交互内容混排
+- 用 Mermaid 画图 :fire:

@@ -1,6 +1,5 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { getCollection } from 'astro:content';
 import PostCard from '@/components/PostCard.svelte';
 import { getReadTime } from '@/lib/utils/readTime';
 import { getPublishedPosts, getPostSlug } from '@/lib/utils/posts';
@@ -12,6 +11,7 @@ import SocialLinks from '@/components/SocialLinks.astro';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { parseMarkdown } from '@/lib/simple-markdown';
+import { getPublishedProjects, getPublishedAppearances } from '@/lib/utils/collections';
 
 const posts = (await getPublishedPosts()).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -20,11 +20,11 @@ const posts = (await getPublishedPosts()).sort(
 const featuredPosts = posts.filter((post) => post.data.featured).slice(0, SITE.featuredPostsCount);
 const latestPosts = posts.filter((post) => !post.data.featured).slice(0, SITE.latestPostsCount);
 
-const projects = (await getCollection('projects'))
+const projects = (await getPublishedProjects())
   .sort((a, b) => a.data.order - b.data.order)
   .slice(0, SITE.homeProjects.count);
 
-const appearances = (await getCollection('appearances'))
+const appearances = (await getPublishedAppearances())
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.homeAppearances.count);
 ---

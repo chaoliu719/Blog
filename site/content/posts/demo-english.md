@@ -2,18 +2,22 @@
 title: 'Demo Post (English)'
 description: 'This is a demo post in English to test cross-language linking.'
 pubDate: 2026-02-02
-tags: ['demo', 'i18n']
+tags: [回归夹具, 'i18n']
 slug: 'demo-english'
 lang: 'en'
 translatedPosts:
-  ru: 'demo-russian'
+  zh: 'demo-chinese'
+draft: true
 ---
+
+> Kept in English on purpose: this is the counterpart of `demo-chinese`,
+> so the pair can exercise cross-language linking.
 
 # Hello World
 
 This is a demonstration of a post written in English.
 
-It should have a link to the Russian version of this post.
+It should have a link to the Chinese version of this post.
 
 ## Features
 

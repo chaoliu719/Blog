@@ -45,6 +45,7 @@ const projects = defineCollection({
     image: z.string().optional(),
     order: z.number().default(0),
     directLink: z.boolean().default(false).optional(),
+    draft: z.boolean().default(false),
   }),
 });
 
@@ -63,6 +64,7 @@ const appearances = defineCollection({
     description: z.string().optional(),
     lang: z.string().default('en'),
     duration: z.string().optional(),
+    draft: z.boolean().default(false),
   }),
 });
 

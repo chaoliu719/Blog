@@ -1,15 +1,16 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { render, getCollection, type CollectionEntry } from 'astro:content';
+import { render, type CollectionEntry } from 'astro:content';
 import Breadcrumbs from '@/components/Breadcrumbs.svelte';
 import SocialShare from '@/components/SocialShare.svelte';
 import { getBreadcrumbSchema } from '@/lib/schemas';
 import { SITE } from '@/config';
+import { getPublishedProjects } from '@/lib/utils/collections';
 
 if (!SITE.pages.projects.enabled) return Astro.rewrite('/404');
 
 export async function getStaticPaths() {
-  const projects = await getCollection('projects');
+  const projects = await getPublishedProjects();
   // Only generate pages for projects without directLink or where directLink is false, or if link is missing
   return projects
     .filter((project) => !project.data.directLink || !project.data.link)

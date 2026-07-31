@@ -1,14 +1,14 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { getCollection } from 'astro:content';
 import { formatDate } from '@/lib/utils/date';
 import Breadcrumbs from '@/components/Breadcrumbs.svelte';
 import { SITE } from '@/config';
 import { getLangFlag } from '@/lib/utils/lang';
+import { getPublishedAppearances } from '@/lib/utils/collections';
 
 if (!SITE.pages.appearances.enabled) return Astro.rewrite('/404');
 
-const appearances = await getCollection('appearances');
+const appearances = await getPublishedAppearances();
 
 const appearancesByYear = appearances.reduce(
   (acc, item) => {

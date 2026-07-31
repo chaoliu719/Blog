@@ -1,9 +1,9 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { getCollection } from 'astro:content';
 import Breadcrumbs from '@/components/Breadcrumbs.svelte';
 import { SITE } from '@/config';
 import { getBreadcrumbSchema } from '@/lib/schemas';
+import { getPublishedProjects } from '@/lib/utils/collections';
 
 if (!SITE.pages.projects.enabled) return Astro.rewrite('/404');
 
@@ -11,7 +11,7 @@ const schema = getBreadcrumbSchema([
   { name: 'Projects', url: new URL('/projects', Astro.site).toString() },
 ]);
 
-const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const projects = (await getPublishedProjects()).sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="Projects" description={SITE.projectsDescription} schema={schema}>
