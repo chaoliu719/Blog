@@ -78,8 +78,8 @@ export const SITE: SiteConfig = {
   googleAnalyticsId: '', // Example: 'G-XXXXXXXXXX'
   homeHeroDescription:
     'Building premium web experiences with Astro, Svelte, and Tailwind. Focused on performance, aesthetics, and clean code. I am currently working on open-source tools and sharing my journey through writing.',
-  blogDescription: 'A collection of thoughts, tutorials, and general web discovery.',
-  projectsDescription: 'Things I’ve built that I’m proud of. Many of them are open-source.',
+  blogDescription: '记录 AI 实践中的思考、踩坑与方法。',
+  projectsDescription: '一些自己做的小工具，大多是开源的。',
 
   // Homepage post counts
   featuredPostsCount: 0,
@@ -87,8 +87,8 @@ export const SITE: SiteConfig = {
 
   // Homepage projects
   homeProjects: {
-    enabled: false,
-    count: 4,
+    enabled: true,
+    count: 3,
   },
 
   // Homepage appearances
@@ -99,7 +99,7 @@ export const SITE: SiteConfig = {
 
   // Page visibility
   pages: {
-    projects: { enabled: false },
+    projects: { enabled: true },
     appearances: { enabled: false },
   },
 
